@@ -11,11 +11,17 @@
             background: violet;
             border: 2px solid black;
         }
+
+        div {
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
     <canvas id="cnv" width="800" height="800"></canvas>
+    <div>PI is equals <span id="points"></span></div>
+    <div>Mistake equals <span id="mistake"></span></div>
 
     <script>
         let cnv = document.getElementById('cnv');
@@ -48,19 +54,28 @@
 
             randomCords.length = points;
 
-            console.log(randomCords)
             for (let i = 0; i < randomCords.length; i++) {
-                setTimeout(() => {
-                    ctx.fillRect(randomCords[i].x, randomCords[i].y, (cnv.clientWidth / size), (cnv.clientWidth / size));
-                }, 100);
+                if (size <= 100) {
+                    setTimeout(() => {
+                        ctx.fillRect(randomCords[i].x, randomCords[i].y, (cnv.clientWidth / size), (cnv.clientHeight / size));
+                    }, 100);
+                } else {
+                    ctx.fillRect(randomCords[i].x, randomCords[i].y, (cnv.clientWidth / size), (cnv.clientHeight / size));
+                }
             }
+
+            var pointsInsideCircle = randomCords.map(element => Math.sqrt(Math.pow((element.x + (cnv.clientWidth / (2 * size)) - (cnv.clientWidth / 2)), 2) + Math.pow((element.y + (cnv.clientHeight / (2 * size)) - (cnv.clientHeight / 2)), 2)) <= (cnv.clientHeight / 2))
+
+            document.getElementById('points').innerHTML = pointsInsideCircle.filter(Boolean).length / points * 4
+            document.getElementById('mistake').innerHTML = Math.PI - (pointsInsideCircle.filter(Boolean).length / points * 4)
+
         }
 
         generateRandomPoint(5000) // max amount = square root of size
 
         function drawCircle() {
             setTimeout(() => {
-                ctx.arc(400,400, cnv.clientWidth / 2, 0, Math.PI * 2, false);
+                ctx.arc(cnv.clientWidth / 2, cnv.clientHeight / 2, cnv.clientWidth / 2, 0, Math.PI * 2, false);
                 ctx.fillStyle = "#0005";
                 ctx.fill();
                 ctx.stroke();
@@ -68,6 +83,7 @@
         }
 
         drawCircle()
+
     </script>
 </body>
 

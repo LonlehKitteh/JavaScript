@@ -1,41 +1,57 @@
-const human = {
-    showName() {
-        console.log(this.name) // undefined
-    },
-    showFullName(options){
-        console.log(`My full name is: ${this.name} ${this.surname ? this.surname : options.surname} ${options.age ?? ''}`)
-    },
-    showThis: function(){
+const obj1 = {
+    name: 'Magda',
+    showName: function showName() {
         console.log(this)
+    },
+    address: {
+        city: 'Będzin',
+        street: 'Paziowa',
+        number: 3,
+        getAddress: () => console.log(this),
+        problems: this,
+        getCity() {
+            console.log(this)
+         }
+    },
+    hobbies: {
+        makingMeUpset: true,
+        skating: true,
+        playingGames: false,
+        showHobbies1(){
+            const logHobbies = () => console.log(this);
+            logHobbies();
+        },
+        showHobbies2: function(){
+            (function logHobbies(){
+                console.log(this)
+            }())
+        }
     }
 }
+obj1.showName();
+obj1.address.getAddress();
+console.log(obj1.address.problems);
+obj1.address.getCity();
+obj1.hobbies.showHobbies1();
+obj1.hobbies.showHobbies2();
 
-const personA = {
-    name: 'Tom'
+const pet = {
+    name: 'Nikuś',
+    showName: obj1.showName
+}
+pet.showName()
+
+const Dog = function(){
+    this.name = 'Spadzigapacz'
+}
+Dog.prototype.showDog = function(){
+    console.log(this)
+}
+const dog = new Dog();
+dog.showDog();
+
+String.prototype.lol = function(){
+    console.log(this)
 }
 
-const people = [
-    {
-        name: 'Magda',
-        surname: 'Wroniecka'
-    },
-    {
-        name: 'Szymon'
-    },
-    {
-        name: 'Michał'
-    }
-]
-
-human.showName()
-human.showName.call(personA) // Tom
-
-people.forEach(person => human.showName.call(person)) // Magda Szymon Michał
-people.forEach(person => human.showFullName.apply(person, [{surname: 'Kowalski'}])) // apply extra parameters 
-people.forEach(person => {
-    human.showFullName.bind(person, {surname:'Nowak'})() // autocall bind but its better to use call in this situation
-    // ------- instead -----------
-    // const newHuman = human.showFullName.bind(person, 'Nowak');
-    // newHuman();
-})
-human.showThis.call() // Window
+'test'.lol()

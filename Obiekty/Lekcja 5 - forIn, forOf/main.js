@@ -2,6 +2,7 @@
 //    - leci po polach
 //    - tylko po enumerowalnych
 //    - sprawdza również pola prototypu
+
 // for..of
 //    - leci po wartościach
 //    - tylko po iterowalnych
@@ -32,8 +33,6 @@ for (const key in person) {
     }
 }
 console.log(Object.keys(person)) // name, surname, age... but without Nikuś
-
-// --------------------------------------------------------------
 
 for(const value of siblings[0]){
     console.log(value) // M i c h a ł

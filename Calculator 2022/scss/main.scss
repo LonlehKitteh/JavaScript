@@ -75,9 +75,16 @@ body {
             @include font(1rem, bold, #0006);
         }
         .value {
+            text-align: right;
+            background: transparent;
+            border: none;
             width: 100%;
             @include flex(right, center, 0);
-            @include font(2.5rem, bold, darken(map-get($colors, "main"), 30));
+            @include font(1.8rem, bold, darken(map-get($colors, "main"), 30));
+            cursor: initial;
+            &:focus {
+                outline: none;
+            }
         }
     }
     .keyboard {
@@ -87,7 +94,7 @@ body {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(6, 1fr);
-        gap: 10px;
+        gap: 3px;
         padding: 1rem;
         button {
             @include button("main");

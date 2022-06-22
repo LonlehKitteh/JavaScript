@@ -1,0 +1,174 @@
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0;
+  background: linear-gradient(45deg, #1fa2ff, #12d8fa);
+}
+
+.calculator {
+  width: clamp(300px, 50%, 25vw);
+  height: 75vh;
+  margin: auto;
+  border-radius: 1rem;
+  background: #b8e2ff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+.calculator .title {
+  font-size: 1.5rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  color: #004e85;
+}
+.calculator .screen {
+  width: 100%;
+  height: 25%;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  padding: 0.2rem;
+}
+.calculator .screen .history {
+  height: 10%;
+  width: 100%;
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  gap: 0;
+  font-size: 1rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.4);
+}
+.calculator .screen .value {
+  width: 100%;
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  gap: 0;
+  font-size: 2.5rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  color: #004e85;
+}
+.calculator .keyboard {
+  width: 100%;
+  height: 75%;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 10px;
+  padding: 1rem;
+}
+.calculator .keyboard button {
+  border: none;
+  border-radius: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0;
+  background: rgba(31, 162, 255, 0.4);
+  font-size: 1.3rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  color: #004e85;
+  height: 100%;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+.calculator .keyboard button:hover {
+  background: rgba(31, 162, 255, 0.6);
+}
+.calculator .keyboard button:focus {
+  background: rgba(0, 108, 184, 0.4);
+  color: #00121f;
+}
+.calculator .keyboard button#button4 {
+  border: none;
+  border-radius: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0;
+  background: rgba(255, 56, 56, 0.4);
+  font-size: 1.3rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  color: #9e0000;
+  height: 100%;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+.calculator .keyboard button#button4:hover {
+  background: rgba(255, 56, 56, 0.6);
+}
+.calculator .keyboard button#button4:focus {
+  background: rgba(209, 0, 0, 0.4);
+  color: #380000;
+}
+.calculator .keyboard button#button24 {
+  border: none;
+  border-radius: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0;
+  background: rgba(64, 255, 25, 0.4);
+  font-size: 1.3rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  color: #167f00;
+  height: 100%;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+.calculator .keyboard button#button24:hover {
+  background: rgba(64, 255, 25, 0.6);
+}
+.calculator .keyboard button#button24:focus {
+  background: rgba(30, 178, 0, 0.4);
+  color: #041900;
+}
+.calculator .keyboard button#button20, .calculator .keyboard button#button16, .calculator .keyboard button#button12, .calculator .keyboard button#button8, .calculator .keyboard button#button7, .calculator .keyboard button#button6, .calculator .keyboard button#button5, .calculator .keyboard button#button3, .calculator .keyboard button#button2, .calculator .keyboard button#button1 {
+  border: none;
+  border-radius: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0;
+  background: rgba(0, 108, 184, 0.4);
+  font-size: 1.3rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  color: #00121f;
+  height: 100%;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+.calculator .keyboard button#button20:hover, .calculator .keyboard button#button16:hover, .calculator .keyboard button#button12:hover, .calculator .keyboard button#button8:hover, .calculator .keyboard button#button7:hover, .calculator .keyboard button#button6:hover, .calculator .keyboard button#button5:hover, .calculator .keyboard button#button3:hover, .calculator .keyboard button#button2:hover, .calculator .keyboard button#button1:hover {
+  background: rgba(0, 108, 184, 0.6);
+}
+.calculator .keyboard button#button20:focus, .calculator .keyboard button#button16:focus, .calculator .keyboard button#button12:focus, .calculator .keyboard button#button8:focus, .calculator .keyboard button#button7:focus, .calculator .keyboard button#button6:focus, .calculator .keyboard button#button5:focus, .calculator .keyboard button#button3:focus, .calculator .keyboard button#button2:focus, .calculator .keyboard button#button1:focus {
+  background: rgba(0, 48, 82, 0.4);
+  color: black;
+}

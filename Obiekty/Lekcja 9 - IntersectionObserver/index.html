@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Intersection Obsever</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #30323d;
+            padding: 15px 20px 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-size: 1.1rem;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .navMenu {
+            flex-basis: 70%;
+            max-width: 550px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navMenu span {
+            padding: 10px;
+            margin: 0 0 0 10px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .navMenu span:hover {
+            background-color: #484b5b;
+        }
+
+        .active {
+            border-bottom: 2px solid #fff;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .home:not(.link) {
+            background-color: #9c1de7;
+        }
+
+        .about:not(.link) {
+            background-color: #28c7fa;
+        }
+
+        .services:not(.link) {
+            background-color: #f85959;
+        }
+
+        .downloads:not(.link) {
+            background-color: #ca1bca;
+        }
+
+        .contact:not(.link) {
+            background-color: #fd0054;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <a href="#home">Logo</a>
+            <div class="navMenu">
+                <a href="#home" class="link home">Home</a>
+                <a href="#about" class="link about">About</a>
+                <a href="#services" class="link services">Services</a>
+                <a href="#downloads" class="link downloads">Downloads</a>
+                <a href="#contact" class="link contact">Contact</a>
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="home section" id="home"> Home </div>
+        <div class="about section" id="about"> About </div>
+        <div class="services section" id="services"> Services </div>
+        <div class="downloads section" id="downloads"> Downloads </div>
+        <div class="contact section" id="contact"> Contact </div>
+    </div>
+
+    <script>
+        const sections = [...document.querySelectorAll('.section')]
+        const links = [...document.querySelectorAll('.link')]
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.7,
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        function observerCallback(entries, observer) {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return
+                links.forEach(link => link.classList.value.split(' ')[1] === entry.target.id ? link.classList.add('active') : link.classList.remove('active'))
+                // find link corresponding to the id of the section. You need that id because of href in links
+            });
+        }
+
+        sections.forEach((sec) => observer.observe(sec));
+    </script>
+</body>
+
+</html>

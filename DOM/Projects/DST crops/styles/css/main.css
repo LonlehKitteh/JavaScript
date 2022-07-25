@@ -1,0 +1,110 @@
+body,
+html {
+  padding: 0.1rem;
+  margin: 0;
+  background: #323641;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main h1 {
+  margin: 1rem 0;
+  font-family: monospace;
+  text-transform: uppercase;
+  color: #f9dde2;
+}
+.main .season {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+.main .season .season-icon {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.main .season .season-icon:focus img {
+  background: #f2b1be;
+  outline: 4px solid #f9dde2;
+}
+.main .season .season-icon img {
+  background: rgb(228, 89, 117);
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  border: none;
+  transition: 0.1s ease-out;
+}
+.main .season .season-icon img:hover {
+  transform: scale(0.9, 0.9);
+  background: #ef9bac;
+}
+.main .season .season-icon img:active {
+  transform: scale(0.6, 0.6);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
+  gap: 0.5rem;
+}
+.content .grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  background-color: #1c1e24;
+  padding: 1rem;
+  border-radius: 0.2rem;
+}
+.content .grid .cell {
+  height: 50px;
+  width: 50px;
+  border-radius: 0.1rem;
+}
+.content .grid .cell img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+.content .grid .cell:nth-child(1) {
+  background-color: #e5627c;
+}
+.content .grid .cell:nth-child(2) {
+  background-color: #e76b84;
+}
+.content .grid .cell:nth-child(3) {
+  background-color: #e8738b;
+}
+.content .grid .cell:nth-child(4) {
+  background-color: #ea7c92;
+}
+.content .grid .cell:nth-child(5) {
+  background-color: #eb8599;
+}
+.content .grid .cell:nth-child(6) {
+  background-color: #ed8ea1;
+}
+.content .grid .cell:nth-child(7) {
+  background-color: #ee96a8;
+}
+.content .grid .cell:nth-child(8) {
+  background-color: #ef9faf;
+}
+.content .grid .cell:nth-child(9) {
+  background-color: #f1a8b7;
+}

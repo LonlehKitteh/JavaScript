@@ -20,7 +20,7 @@ class Partcile {
             this.size, 0, Math.PI * 2
         )
         ctx.closePath()
-        ctx.fillStyle = "red"
+        ctx.fillStyle = "white"
         ctx.fill()
     }
 
@@ -47,7 +47,7 @@ init()
 
 function animate() {
     requestAnimationFrame(animate)
-    ctx.fillStyle = "rgb(0,0,0,0.05)"
+    ctx.fillStyle = "rgb(255,0,0,0.03)"
     ctx.fillRect(0, 0, innerWidth, innerHeight)
 
     particleArray.forEach(particle => {

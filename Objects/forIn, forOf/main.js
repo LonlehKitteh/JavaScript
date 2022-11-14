@@ -34,9 +34,23 @@ for (const key in person) {
 }
 console.log(Object.keys(person)) // name, surname, age... but without Nikuś
 
-for(const value of siblings[0]){
+for (const value of siblings[0]) {
     console.log(value) // M i c h a ł
 }
 
 // object is not iterable
 console.log(person[Symbol.iterator]) // undefined
+
+
+// make object iterable :D
+const test = {
+    name: 'test',
+    age: 13,
+    isJSFun: true,
+    [Symbol.iterator]: function* () {
+        for (let key in this) yield this[key]
+    }
+}
+for (const key of test) {
+    console.log(key)
+}

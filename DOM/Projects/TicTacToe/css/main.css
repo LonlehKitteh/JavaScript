@@ -1,0 +1,686 @@
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOutJs {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutJs {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  position: static;
+  top: 50%;
+  left: 50%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: #323641;
+  color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#full {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  width: 100%;
+  height: 100%;
+  position: static;
+  top: 50%;
+  left: 50%;
+}
+
+#full #grid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 60%;
+  height: 60%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  left: calc(40% - 2px);
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  gap: 2px 2px;
+  color: inherit;
+  font-family: monospace;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12rem;
+  line-height: 11.7rem;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0px 6px rgba(0, 0, 0, 0.23);
+}
+
+#full #grid #component1 {
+  position: relative;
+  background-color: #4e5466;
+}
+
+#full #grid #component1 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#full #grid #component1 div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+#full #grid #component2 {
+  position: relative;
+  background-color: #4e5466;
+}
+
+#full #grid #component2 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#full #grid #component2 div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+#full #grid #component3 {
+  position: relative;
+  background-color: #4e5466;
+}
+
+#full #grid #component3 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#full #grid #component3 div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+#full #grid #component4 {
+  position: relative;
+  background-color: #4e5466;
+}
+
+#full #grid #component4 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#full #grid #component4 div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+#full #grid #component5 {
+  position: relative;
+  background-color: #4e5466;
+}
+
+#full #grid #component5 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#full #grid #component5 div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+#full #grid #component6 {
+  position: relative;
+  background-color: #4e5466;
+}
+
+#full #grid #component6 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#full #grid #component6 div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+#full #grid #component7 {
+  position: relative;
+  background-color: #4e5466;
+}
+
+#full #grid #component7 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#full #grid #component7 div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+#full #grid #component8 {
+  position: relative;
+  background-color: #4e5466;
+}
+
+#full #grid #component8 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#full #grid #component8 div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+#full #grid #component9 {
+  position: relative;
+  background-color: #4e5466;
+}
+
+#full #grid #component9 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#full #grid #component9 div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+#full #score {
+  width: 60%;
+  height: 60%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+#full #score #points {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px 2px;
+  width: 100%;
+  height: 100%;
+  position: static;
+  top: 50%;
+  left: 50%;
+  color: #cacaca;
+  font-family: monospace;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: inherit;
+}
+
+#full #score #points div {
+  background-color: #4e5466;
+  position: relative;
+  -webkit-transition: background-color 0.1s linear;
+  transition: background-color 0.1s linear;
+}
+
+#full #score #points div:nth-child(5), #full #score #points div:nth-child(2), #full #score #points div:last-child {
+  background-color: rgba(78, 84, 102, 0.5);
+}
+
+#full #score #points div #reset {
+  background-color: transparent;
+  border: none;
+  color: #e9e9e9;
+  font-family: monospace;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.6rem;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+#full #score #points div:not(.content):last-child:hover, #full #score #points div:not(.content):first-child:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: rgba(78, 84, 102, 0.8);
+  cursor: pointer;
+}
+
+#full #score #points div .content {
+  background-color: transparent;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.6rem;
+}
+
+#full #score #points div .content i {
+  font-style: normal;
+}
+
+.token1 {
+  color: #cacaca;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.token1 div:last-child {
+  display: none;
+}
+
+.token2 {
+  color: #cacaca;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.token2 div:first-child {
+  display: none;
+}
+
+.settings {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+          transform: translate(-50%, -50%) scale(0.8);
+  background-color: transparent;
+  -webkit-animation: fadeIn 0.4s ease-in-out forwards;
+          animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.settings2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  background-color: transparent;
+  -webkit-animation: fadeOut 0.4s ease-in-out forwards;
+          animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+#settings {
+  display: none;
+}
+
+.fadeOutJs div {
+  -webkit-animation: fadeOutJs 0.2s ease-in-out both;
+          animation: fadeOutJs 0.2s ease-in-out both;
+}
+
+#stgs-container {
+  width: 40%;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #323641;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0px 6px rgba(0, 0, 0, 0.23);
+}
+
+#stgs-container #flex {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  place-content: center center;
+  gap: 2px 2px;
+  margin: 2px;
+  color: white;
+  font-family: monospace;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#stgs-container #flex .char {
+  font-size: 2.5rem;
+  position: relative;
+  top: 4%;
+}
+
+#stgs-container #flex div {
+  background-color: #414554;
+  height: 5rem;
+  padding: 2vw;
+  -webkit-transition: background-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#stgs-container #flex div input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: unset;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: monospace;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.6vw;
+  text-align: left;
+  border-bottom: 2px solid white;
+  width: 60%;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+
+#stgs-container #flex div input[type="range"] {
+  outline: 0;
+  border: 0;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 7px;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  overflow: hidden;
+  height: 40px;
+  -webkit-appearance: none;
+  height: 40px;
+}
+
+#stgs-container #flex div input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  width: 40px;
+  height: 40px;
+}
+
+#stgs-container #flex div input[type="range"]::-webkit-slider-thumb {
+  width: 40px;
+  -webkit-appearance: none;
+  height: 40px;
+  cursor: ew-resize;
+  -webkit-box-shadow: -340px 0 0 320px #646a7c, inset 0 0 0 40px #282c37;
+          box-shadow: -340px 0 0 320px #646a7c, inset 0 0 0 40px #282c37;
+  border-radius: 50%;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
+
+#stgs-container #flex div input[type="range"]:active::-webkit-slider-thumb {
+  -webkit-box-shadow: -340px 0 0 320px #1e222d, inset 0 0 0 3px white;
+          box-shadow: -340px 0 0 320px #1e222d, inset 0 0 0 3px white;
+}
+
+#stgs-container #flex div:last-child {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+#stgs-container #flex div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  background-color: rgba(78, 84, 102, 0.6);
+}
+
+#stgs-container #operation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 4px);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 2px 2px;
+  margin: 2px;
+}
+
+#stgs-container #operation div {
+  color: white;
+  font-family: monospace;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  text-align: center;
+  padding: 3vw;
+  background-color: #414554;
+  -webkit-transition: background-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: -webkit-box-shadow 0.1s linear;
+  transition: -webkit-box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear, -webkit-box-shadow 0.1s linear;
+}
+
+#stgs-container #operation div:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  background-color: rgba(78, 84, 102, 0.6);
+}
+
+.focus1 {
+  background-color: red !important;
+}
+/*# sourceMappingURL=main.css.map */

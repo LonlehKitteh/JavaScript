@@ -1,25 +1,48 @@
-function KNN(k) {
-    function createPoint() {
-        const temp = ['A', 'B', 'C']
-
-        return ({ x: Math.floor(Math.random() * 10) - 5, y: Math.floor(Math.random() * 10) - 5, class: `Class ${temp[Math.floor(Math.random() * 3)]}` })
-    }
-
-    function setPoints(n) {
-        let array = []
-        Math.floor(Math.random() * 10)
-        for (let i = 0; i < n; i++) {
-            array.push(createPoint())
+function setPoints(n) {
+    const classes = ['A', 'B', 'C']
+    let array = []
+    Math.floor(Math.random() * 10)
+    for (let i = 0; i < n; i++) {
+        let temp = {
+            index: i,
+            x: +(Math.random() * 10 - 5).toFixed(2),
+            y: +(Math.random() * 10 - 5).toFixed(2),
+            className: `Class ${classes[Math.floor(Math.random() * 3)]}`
         }
 
-        return array
+        array.push({ ...temp, hypot: +Math.hypot(Math.abs(temp.x), Math.abs(temp.y)).toFixed(4) })
     }
 
-    const trainedData = setPoints(100)
-    const testData = setPoints(10).map(property => ({ x: property.x, y: property.y }))
-    let temp = [...testData, ...trainedData].sort((a, b) => a.x - b.x)
+    return array
+}
 
-    console.log(temp)
+function KNN(k) {
+    const trainedData = setPoints(100)
+    const testData = setPoints(10).map(obj => ({ ...obj, className: "" }))
+    let temp = [...testData, ...trainedData].sort((a, b) => a.hypot - b.hypot)
+
+
+    let indexes = []
+
+    temp.forEach((obj, index) => {
+        if (!obj.className) indexes.push({ index: index, resolved: [] })
+    })
+
+    indexes.map(obj => {
+        let resolved = []
+
+        for (let i = 0; i < 2; i++) {
+
+            // if (obj.index === temp.length - 1) return ({ resolved: temp.slice(-k + i) })
+            // if (obj.index === 0) return ({ resolved: temp.slice(i, k) })
+
+            console.log(temp[obj.index + 1])
+        }
+
+        return ({ ...obj, resolved: resolved })
+    })
+    console.log(indexes)
+
 }
 
 KNN(4)

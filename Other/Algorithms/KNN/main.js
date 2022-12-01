@@ -20,31 +20,19 @@ function KNN(k) {
     const testData = setPoints(10).map(obj => ({ ...obj, className: "" }))
     let temp = [...testData, ...trainedData].sort((a, b) => a.hypot - b.hypot).map((e, i) => ({ ...e, index: i }))
 
-    temp.forEach((obj, i) => {
-        if (!obj.className) {
-            let n = k / 2
-            while (n >= -k / 2) {
-                // if (!temp[i + n].className) continue
-                console.log(temp[i + n])
+    let testIndexes = temp.filter(obj => !obj.className)
+    let onlyClasses = temp.filter(obj => obj.className)
 
-                n--;
-            }
-        }
+    let result = []
+    testIndexes.forEach(obj => {
+        let arr = [...onlyClasses]
+
+        arr.sort((a, b) => Math.abs(a.hypot - obj.hypot) - Math.abs(b.hypot - obj.hypot))
+        result.push(arr.slice(0, k))
     })
 
-    // indexes.map(obj => {
-    // console.log(obj)
-    // console.log(temp.slice(obj.index - (k / 2), obj.index + (k / 2) + 1), obj.index)
-
-    // if (obj.index === temp.length - 1) return ({ resolved: temp.slice(-k + i) })
-    // if (obj.index === 0) return ({ resolved: temp.slice(i, k) })
-
-    // console.log(temp.slice(k - 2 + obj.index, k + 2 + obj.index))
-
-    // return ({ ...obj, resolved: resolved })
-    // })
-    // console.log(indexes)
-
+    result.forEach(e => console.table(e))
+    console.table(temp)
 }
 
 KNN(4)

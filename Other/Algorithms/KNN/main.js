@@ -1,7 +1,6 @@
 function setPoints(n) {
     const classes = ['A', 'B', 'C']
     let array = []
-    Math.floor(Math.random() * 10)
     for (let i = 0; i < n; i++) {
         let temp = {
             x: +(Math.random() * 10 - 5).toFixed(2),
@@ -17,22 +16,29 @@ function setPoints(n) {
 
 function KNN(k) {
     const trainedData = setPoints(100)
-    const testData = setPoints(10).map(obj => ({ ...obj, className: "" }))
-    let temp = [...testData, ...trainedData].sort((a, b) => a.hypot - b.hypot).map((e, i) => ({ ...e, index: i }))
+    const testData = setPoints(10).map(obj => ({ ...obj, className: "" })).sort((a, b) => a.hypot - b.hypot)
+    let temp = [...testData, ...trainedData].sort((a, b) => a.hypot - b.hypot)
 
-    let testIndexes = temp.filter(obj => !obj.className)
-    let onlyClasses = temp.filter(obj => obj.className)
+    console.table(testData)
 
     let result = []
-    testIndexes.forEach(obj => {
-        let arr = [...onlyClasses]
+    testData.forEach(obj => {
+        trainedData.sort((a, b) => Math.abs(a.hypot - obj.hypot) - Math.abs(b.hypot - obj.hypot))
+        result.push(trainedData.slice(0, k))
+    })
+    result.forEach(e => console.table(e))
 
-        arr.sort((a, b) => Math.abs(a.hypot - obj.hypot) - Math.abs(b.hypot - obj.hypot))
-        result.push(arr.slice(0, k))
+    result.forEach((arr, i) => {
+        arr = arr.map(obj => obj.className)
+
+        const hashmap = arr.reduce((acc, val) => {
+            acc[val] = (acc[val] || 0) + 1
+            return acc
+        }, {})
+        testData[i].className = Object.entries(hashmap).sort((a, b) => b[1] - a[1])[0][0]
     })
 
-    result.forEach(e => console.table(e))
     console.table(temp)
 }
 
-KNN(4)
+KNN(5)

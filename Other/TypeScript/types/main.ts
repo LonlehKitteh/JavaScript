@@ -65,3 +65,51 @@ object2 = {
 };
 
 console.log(object2);
+
+// any type
+
+let thing: any = 25;
+thing = "Chris";
+
+console.log(thing);
+
+let mixed: any[] = [];
+
+mixed = [21, "Chris", true];
+
+let anyObj: { name: any; age: any } = { name: 21, age: "Chris" };
+
+console.log(anyObj);
+
+// functions
+
+let greet = () => {
+  console.log("Hello World!");
+};
+
+// error cannot change type like this greet = 'hello';
+
+let greet1: Function;
+
+greet1 = () => {
+  console.log("Hello, again!");
+};
+
+const add = (a: number, b: number, c: number = 10) => {
+  console.log(a + b + c); // c?: number optional parameter
+};
+
+add(2, 3);
+
+const minus = (a: number, b: number): string => {
+  return String(a - b);
+};
+let subtraction = minus(5, 2);
+
+// type aliases
+
+type StringOrNum = string | number;
+
+const logDetails = (user: { name: string; uid: StringOrNum }) => {
+  console.log(`${user.name} logged in!`);
+};

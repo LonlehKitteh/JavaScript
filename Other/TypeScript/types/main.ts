@@ -113,3 +113,28 @@ type StringOrNum = string | number;
 const logDetails = (user: { name: string; uid: StringOrNum }) => {
   console.log(`${user.name} logged in!`);
 };
+
+// function signatures
+
+let ex1: (a: string, b: string) => void;
+
+ex1 = (name: string, city: string) => {
+  console.log(`${name} lives in ${city}!`);
+};
+
+let ex2: (a: number, b: number, c: string) => number;
+
+ex2 = (numOne: number, numTwo: number, action: string) => {
+  if (action === "add") {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
+};
+type person = { name: string; age: number };
+
+let ex3: (obj: person) => void;
+
+ex3 = (obj: person) => {
+  console.log(`${obj.name} is ${obj.age} years old`);
+};

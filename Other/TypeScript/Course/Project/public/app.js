@@ -11,3 +11,17 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
     console.log(type.value, amount.valueAsNumber);
 });
+// classes
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice.prototype.format = function () {
+        return "".concat(this.client, " owes $").concat(this.amount, " for ").concat(this.details);
+    };
+    return Invoice;
+}());
+var invOne = new Invoice("Mario", "work on the website", 250);
+console.log(invOne);

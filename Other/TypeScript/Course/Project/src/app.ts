@@ -33,12 +33,15 @@ const list = new ListTemplate(ul);
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
+  let values: [string, string, number];
+  values = [tofrom.value, details.value, amount.valueAsNumber];
+
   let doc: HasFormatter;
 
   if (type.value === "invoice") {
-    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
 
   list.render(doc, type.value, "end");
@@ -83,4 +86,36 @@ console.log(invoices);
 // invOne.client = "Chris"; // error
 // we have access to deny access use ACCESS MODIFIER (public, private, readonly)
 
-console.log();
+//enums
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+}
+
+interface Resource<T> {
+  uid: number;
+  resourceType: ResourceType;
+  data: T;
+}
+
+const docOne1: Resource<object> = {
+  uid: 1,
+  resourceType: ResourceType.BOOK,
+  data: { title: "name of the wind" },
+};
+
+const docTwo2: Resource<string> = {
+  uid: 10,
+  resourceType: ResourceType.AUTHOR,
+  data: "Me",
+};
+
+// tuples
+
+let arr = ["ryu", 25, true];
+
+let tup: [string, number, boolean];
+tup = ["ryu", 25, true];

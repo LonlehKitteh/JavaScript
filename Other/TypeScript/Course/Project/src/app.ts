@@ -1,12 +1,13 @@
-import {Invoice} from './classes/Invoice'
-import {Payment} from './classes/Payment'
-import {HasFormatter} from './interfaces/HasFormatter'
+import { Invoice } from "./classes/Invoice";
+import { ListTemplate } from "./classes/ListTemplate";
+import { Payment } from "./classes/Payment";
+import { HasFormatter } from "./interfaces/HasFormatter";
 
 let docOne: HasFormatter;
 let docTwo: HasFormatter;
 
-docOne = new Invoice('Jon', 'web work', 150);
-docTwo = new Payment('Julia', 'plumbing work', 100);
+docOne = new Invoice("Jon", "web work", 150);
+docTwo = new Payment("Julia", "plumbing work", 100);
 
 let docs: HasFormatter[] = [];
 docs.push(docOne);
@@ -25,18 +26,22 @@ const tofrom = document.querySelector("#tofrom") as HTMLInputElement;
 const details = document.querySelector("#details") as HTMLInputElement;
 const amount = document.querySelector("#amount") as HTMLInputElement;
 
+// list template instance
+const ul = document.querySelector("ul")!;
+const list = new ListTemplate(ul);
+
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
   let doc: HasFormatter;
 
-  if(type.value === 'invoice'){
+  if (type.value === "invoice") {
     doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
   } else {
-    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber)
+    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
   }
 
-  console.log(doc);
+  list.render(doc, type.value, "end");
 });
 
 // classes

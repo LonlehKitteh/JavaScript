@@ -43,7 +43,8 @@ console.log(person[Symbol.iterator]) // undefined
 
 
 // make object iterable :D
-const test = {
+
+const iterableObj = {
     name: 'test',
     age: 13,
     isJSFun: true,
@@ -51,6 +52,7 @@ const test = {
         for (let key in this) yield this[key]
     }
 }
-for (const key of test) {
+
+for (const key of iterableObj) {
     console.log(key)
 }

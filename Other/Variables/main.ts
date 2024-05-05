@@ -83,10 +83,10 @@ function initialization() {
 // Is time between declaration and initialization of let var and const variables
 // All variables are hoisted but let and const goes to Temporal Dead Zone
 
-function host() {
-  console.log(a, b, c);
-
-  var a = 5;
-  let b = 10;
-  const c = 30;
-}
+// function host() {
+//   console.log(a, b, c);
+//     // undefied ERROR ERROR
+//   var a = 5;
+//   let b = 10;
+//   const c = 30;
+// }
